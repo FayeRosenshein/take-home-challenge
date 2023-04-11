@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getStoryData } from '../../ApiCalls';
+import Header from '../Header/Header';
 import Filter from '../Filter/Filter';
 import List from '../List/List'
 import DetailView from '../DetailView/DetailView'
@@ -25,42 +26,43 @@ function App() {
 	}, [])
 
 	const sectionOptions = [
-    { value: "arts", label: "arts" },
-    { value: "automobiles", label: "automobiles" },
-    { value: "books", label: "books" },
-    { value: "business", label: "business" },
-    { value: "climate", label: "climate" },
-    { value: "crosswords", label: "crosswords" },
-    { value: "fashion", label: "fashion" },
-    { value: "food", label: "food" },
-    { value: "health", label: "health" },
-    { value: "insider", label: "insider" },
-    { value: "magazine", label: "magazine" },
-    { value: "movies", label: "movies" },
-    { value: "nyregion", label: "nyregion" },
-    { value: "obituaries", label: "obituaries" },
-    { value: "opinion", label: "opinion" },
-    { value: "politics", label: "politics" },
-    { value: "realestate", label: "realestate" },
-    { value: "science", label: "science" },
-    { value: "sports", label: "sports" },
-    { value: "sundayreview", label: "undayreview" },
-    { value: "technology", label: "technology" },
-    { value: "t-magazine", label: "t-magazine" },
-    { value: "home", label: "top stories" },
-    { value: "travel", label: "travel" },
-    { value: "theater", label: "theater" },
-    { value: "upshot", label: "upshot" },
-    { value: "us", label: "us" },
-    { value: "world", label: "world" },
-  ]
+		{ value: "arts", label: "arts" },
+		{ value: "automobiles", label: "automobiles" },
+		{ value: "books", label: "books" },
+		{ value: "business", label: "business" },
+		{ value: "climate", label: "climate" },
+		{ value: "crosswords", label: "crosswords" },
+		{ value: "fashion", label: "fashion" },
+		{ value: "food", label: "food" },
+		{ value: "health", label: "health" },
+		{ value: "insider", label: "insider" },
+		{ value: "magazine", label: "magazine" },
+		{ value: "movies", label: "movies" },
+		{ value: "nyregion", label: "nyregion" },
+		{ value: "obituaries", label: "obituaries" },
+		{ value: "opinion", label: "opinion" },
+		{ value: "politics", label: "politics" },
+		{ value: "realestate", label: "realestate" },
+		{ value: "science", label: "science" },
+		{ value: "sports", label: "sports" },
+		{ value: "sundayreview", label: "undayreview" },
+		{ value: "technology", label: "technology" },
+		{ value: "t-magazine", label: "t-magazine" },
+		{ value: "home", label: "top stories" },
+		{ value: "travel", label: "travel" },
+		{ value: "theater", label: "theater" },
+		{ value: "upshot", label: "upshot" },
+		{ value: "us", label: "us" },
+		{ value: "world", label: "world" },
+	]
 
 	return (
 		<main>
-			<h1>Take Home Challenge</h1>
-			<Filter setSectionOption={setSectionOption} sectionOption={sectionOption} sectionOptions={sectionOptions}/>
+				<h1>Take Home Challenge</h1>
+				<Header />
 			<Routes>
-				<Route path='/'element={<List topStories={topStories} sectionOption={sectionOption}/>}></Route>
+				<Route path='/'></Route>
+				<Route path='/list' element={<List topStories={topStories} sectionOption={sectionOption} setSectionOption={setSectionOption} sectionOptions={sectionOptions}/>}></Route>
 				<Route path='/:title' element={<DetailView />} />
 			</Routes>
 		</main>

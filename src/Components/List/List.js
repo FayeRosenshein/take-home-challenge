@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { getStoryData } from "../../ApiCalls"
+import Filter from "../Filter/Filter"
 import Card from "../Card/Card"
 import './List.css'
 
-export default function List({topStories, sectionOption}) {
+export default function List({topStories, sectionOption, setSectionOption, sectionOptions}) {
 	const [selectedStories, setSelectedStories] = useState([])
 
 	useEffect((sectionOption) => {
@@ -32,6 +33,7 @@ export default function List({topStories, sectionOption}) {
 	})
 	return (
 		<section>
+			<Filter setSectionOption={setSectionOption} sectionOptions={sectionOptions} sectionOption={sectionOption} />
 			{mappedCards}
 		</section>
 	)
