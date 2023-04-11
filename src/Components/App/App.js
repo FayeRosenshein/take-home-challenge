@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { getTopStoryData } from '../../ApiCalls';
+import List from '../List/List'
+import DetailView from '../DetailView/DetailView'
 import './App.css';
 
 function App() {
@@ -7,24 +10,27 @@ function App() {
 
 	useEffect(() => {
 		getTopStoryData('home')
-		.then((data) => {
-			if(!data.ok) {
-				throw new Error('Failed to fetch top stories')
-			}
-			return data.json()
-		})
-		.then((data) => {
-			setTopStories(data.results)
-			console.log(topStories)
-		})
-	},[])
+			.then((data) => {
+				if (!data.ok) {
+					throw new Error('Failed to fetch top stories')
+				}
+				return data.json()
+			})
+			.then((data) => {
+				setTopStories(data.results)
+				console.log(topStories)
+			})
+	}, [])
 
-  return (
-    <main>
+	return (
+		<main>
 			<h1>Take Home Challenge</h1>
-			<link></link>
+			<Routes>
+				<Route path='/'element={<List topStories={topStories} />}></Route>
+				<Route path='/:title' element={<DetailView />} />
+			</Routes>
 		</main>
-  );
+	);
 }
 
 export default App;
