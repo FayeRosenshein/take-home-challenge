@@ -1,9 +1,14 @@
-export default function Card({title, section, abstract}) {
+import { Link } from "react-router-dom"
+import './Card.css'
+
+export default function Card({ title, section, abstract }) {
 	return (
 		<div className="article-card">
-			<p>{section}</p>
-			<h2>{title}</h2>
-			<p>{abstract}</p>
+				<p>Section: {section}</p>
+			<Link to={`/${title}`} style={{ textDecoration: 'none' }}>
+				<h2>Title: {title}</h2>
+			</Link>
+				<p>Abstract: {abstract}</p>
 		</div>
 	)
 }

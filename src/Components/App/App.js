@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { getTopStoryData } from '../../ApiCalls';
+import { getStoryData } from '../../ApiCalls';
 import List from '../List/List'
 import DetailView from '../DetailView/DetailView'
 import './App.css';
@@ -9,7 +9,7 @@ function App() {
 	const [topStories, setTopStories] = useState([])
 
 	useEffect(() => {
-		getTopStoryData('home')
+		getStoryData('home')
 			.then((data) => {
 				if (!data.ok) {
 					throw new Error('Failed to fetch top stories')
