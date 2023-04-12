@@ -1,6 +1,6 @@
-import Select from 'react-select'
+import './Filter.css'
 
-export default function Filter({setSearchInput, searchInput, sectionOption, setSectionOption, sectionOptions }) {
+export default function Filter({setSearchInput, searchInput}) {
 	
 	const handleChange = (e) => setSearchInput(e.target.value)
 
@@ -11,12 +11,6 @@ export default function Filter({setSearchInput, searchInput, sectionOption, setS
 			placeholder='Search by Section'
 			onChange={handleChange}
 			value={searchInput} />
-			{/* <Select
-				closeMenuOnSelect={true}
-				options={sectionOptions}
-				onChange={(e) => setSectionOption(e)}
-			/>
-			{console.log(sectionOption.value)} */}
 		</div>
 	)
 }
