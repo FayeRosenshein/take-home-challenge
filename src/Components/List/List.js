@@ -4,7 +4,7 @@ import Filter from "../Filter/Filter"
 import Card from "../Card/Card"
 import './List.css'
 
-export default function List({topStories, sectionOption, setSectionOption, sectionOptions}) {
+export default function List({topStories, setUri, sectionOption, setSectionOption, sectionOptions}) {
 	const [searchInput, setSearchInput] = useState('')
 	// const [selectedStories, setSelectedStories] = useState([])
 
@@ -31,7 +31,7 @@ export default function List({topStories, sectionOption, setSectionOption, secti
 					key={story.uri}
 					title={story.title} 
 					section={story.section} 
-					abstract={story.abstract} />
+					abstract={story.abstract}  />
 		)
 	})
 
@@ -41,7 +41,7 @@ export default function List({topStories, sectionOption, setSectionOption, secti
 					key={story.uri}
 					title={story.title} 
 					section={story.section} 
-					abstract={story.abstract} />
+					abstract={story.abstract}  />
 		)
 	})
 

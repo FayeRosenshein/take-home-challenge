@@ -8,7 +8,7 @@ export default function Filter({setSearchInput, searchInput, sectionOption, setS
 		<div>
 			<input
 			type='text'
-			placeholder='Search Movies'
+			placeholder='Search by Section'
 			onChange={handleChange}
 			value={searchInput} />
 			{/* <Select
