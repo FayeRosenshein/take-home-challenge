@@ -2,13 +2,14 @@ import './DetailVeiw.css'
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function DetailView({topStories, params}) {
+export default function DetailView() {
 	const [singleStory, setSingleStory] = useState({})
 	
-
+	let { uri } = useParams()
+	
 	useEffect(() => {
-		setSingleStory(params)
-		console.log('params', params)
+		setSingleStory(uri)
+		console.log('uri', uri)
 		console.log('singleStory', singleStory)
 	})
 
