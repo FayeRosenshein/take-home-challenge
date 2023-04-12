@@ -63,7 +63,7 @@ function App() {
 			<Routes>
 				<Route path='/'></Route>
 				<Route path='/list' element={<List topStories={topStories} sectionOption={sectionOption} setSectionOption={setSectionOption} sectionOptions={sectionOptions}/>}></Route>
-				<Route path='/:title' element={<DetailView />} />
+				<Route path='/:title' element={<DetailView topStories={topStories}/>} />
 			</Routes>
 		</main>
 	);
