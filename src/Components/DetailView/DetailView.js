@@ -1,44 +1,29 @@
+import { Link, useLocation } from 'react-router-dom'
 import './DetailVeiw.css'
-import { useParams, useLocation, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getStoryData } from '../../ApiCalls';
 
-export default function DetailView({topStories, setLoading}) {
-	const [singleStory, setSingleStory] = useState({})
-	// const location = useLocation();
-  // const state = location.state;
-  // console.log(state);
-	let { title } = useParams()
+export default function DetailView() {
+  const location = useLocation()
+  const id = location.state.id
+  const topStories = location.state.topStories
 
-	useEffect(() => {
-		setLoading(true)
-		setSingleStory(topStories.find(story => story.title === title))
-		setLoading(false)
-		console.log('title', title)
-		console.log('singleStory', singleStory)
-	},[])
-
-	// key={story.uri}
-	// title={story.title} 
-	// section={story.section} 
-	// subsection={story.subsection}
-	// abstract={story.abstract}
-	// uri={story.uri}
-	// url={story.url}
-	// multimedia={story.multimedia[0].url}
-	// published_date={story.published_date}
-	// byline={story.byline}
-
-	return (
-		<div >
-			<Link to={`/`} style={{ textDecoration: 'none' }}><p>List of Articles</p></Link>
-			<h1>Detail view</h1>
-			<p>{singleStory.section}</p>
-			<p>{singleStory.title}</p>
-			<p>{singleStory.byline}</p>
-			<p>{singleStory.abstract}</p>
-			<Link to={`${singleStory.url}`} style={{ textDecoration: 'none' }}><p>{singleStory.url}</p></Link>
-			<p>{singleStory.multimedia.url}</p>
-		</div>
-	)
+  return (
+    <section className='detail-view'>
+      <div className='detail'>
+        <p className='detail-category'>{topStories[id].section}</p>
+        <Link to={topStories[id].short_url} >
+          <h2 className='detail-title'>{topStories[id].title}</h2>
+        </Link>
+        <p className='detail-abstract'>{topStories[id].abstract}</p>
+        <p className='detail-byline'>{topStories[id].byline}</p>
+        <div className='detail-dates-container'>
+          <p className='detail-date-published'>{new Date(topStories[id].published_date).toDateString()}</p>
+          <p className='detail-date-updated'>Updated {new Date(topStories[id].updated_date).toLocaleTimeString()}</p>
+        </div>
+        <div className='detail-image-container'>
+          <p className='detail-image-copyright'>{topStories[id].multimedia[0].copyright}</p>
+          <img className='details-image'src={topStories[id].multimedia[0].url} alt={topStories.title}/>
+        </div>
+      </div>
+    </section>
+  )
 }
