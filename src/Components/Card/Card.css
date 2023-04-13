@@ -1,3 +1,35 @@
-.article-card {
-	border: 1px solid black;
+.card {
+	background-color: white;
+	height: 155px;
+  width: 400px;
+  margin-bottom: 8%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.card-image {
+  width: 200px;
+  margin: 1em;
+}
+
+.card-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1em 0 1em;
+}
+.card-text {
+	text-align: left;
+	font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+b {
+  margin: 0 1em 0 1em;
 }
