@@ -3,7 +3,7 @@ import './Filter.css'
 export default function Filter({ setCategory }) {
 
   return (
-    <select className='drop-down-filter' onChange={(e) => setCategory(e.target.value)}>
+    <select className='drop-down' onChange={(e) => setCategory(e.target.value)}>
       <option value='home'>Top Stories</option>
       <option value='arts'>Arts</option>
       <option value='automobiles'>Automobiles</option>

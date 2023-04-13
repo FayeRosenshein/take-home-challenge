@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: double lightgrey; */
+  height: 12vh;
+}
+
+h1 {
+  margin: 0;
+  /* font-family: 'UnifrakturCook', cursive; */
+  font-size: 4em;
+  cursor: pointer;
+}

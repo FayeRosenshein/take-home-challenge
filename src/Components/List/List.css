@@ -1,0 +1,16 @@
+.list {
+	padding: 20px;
+}
+
+.list-title {
+	text-align: center;
+	margin-bottom: 55px;
+}
+
+.cards-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	overflow: hidden visible;
+}

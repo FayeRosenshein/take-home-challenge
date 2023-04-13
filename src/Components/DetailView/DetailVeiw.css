@@ -1,0 +1,57 @@
+.detail-view {
+	text-align: left;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.detail-title {
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+
+.detail-abstract, 
+.detail-byline {
+  margin-bottom: 0;
+}
+
+.detail-dates-container {
+  display: flex;
+}
+
+.detail-date-published,
+.detail-date-updated {
+  margin-top: 5px;
+}
+
+.detail-byline,
+.detail-date-published,
+.detail-image-copyright,
+.detail-date-updated {
+  font-size: 16px;
+}
+
+.detail-byline,
+.detail-date-published {
+  padding-right: 10px;
+}
+
+.detail {
+  max-width: 900px;
+  min-width: 200px;
+}
+
+.details-image {
+	height: 50vh;
+}
+
+.detail-image-copyright {
+  margin: 0;
+  text-align: right ;
+}
+
+.detail-image {
+  width: 50%;
+  height: auto;
+}
