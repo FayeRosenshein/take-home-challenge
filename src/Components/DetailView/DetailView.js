@@ -10,7 +10,7 @@ export default function DetailView() {
 		<section className='detail-view'>
 					<img className='detail-image' src={topStories[id].multimedia[0].url} alt={topStories.title} />
 			<div className='detail'>
-				<p className='detail-category'>Category: {topStories[id].section}</p>
+				<p className='detail-category'>Section: {topStories[id].section}</p>
 				<Link to={topStories[id].short_url} >
 					<h2 className='detail-title'>{topStories[id].title}</h2>
 				</Link>
