@@ -84,6 +84,34 @@ This app lists stories from the New York Times. It shows a details page as well 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ARCHITECTURE -->
+
+## Architecture
+
+First iteration - single page with top news on page load
+Second iteration - detailed page view
+third iteration - design of page
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [x] functional MVP
+- [x] style MVP
+- [] fourth itereation MVP
+
+See the [open issues](https://github.com/FayeRosenshein/take-home-challenge/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Future Additions
+
+- fourth iteration - add search keyword function for each page
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 [Faye-badge]: https://img.shields.io/badge/-Faye%20Rosenshein-green
 [Faye-url]: https://github.com/FayeRosenshein
